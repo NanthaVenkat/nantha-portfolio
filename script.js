@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // custom cursor
-document.addEventListener("mousemove", e => {
-    cursor.setAttribute("style", "top:" + (e.pageY) + "px; left:" + (e.pageX) + "px;")
-});
+// document.addEventListener("mousemove", e => {
+//     cursor.setAttribute("style", "top:" + (e.pageY) + "px; left:" + (e.pageX) + "px;")
+// });
 
 // overlay
 togglebutton.addEventListener( "click", ()=> {
@@ -118,3 +118,42 @@ function cvDownload() {
 
     document.body.removeChild(anchor);
 }
+
+// cursor button
+
+const curButton = document.querySelectorAll(".arrows");
+const slider = document.querySelector(".skill-wrapper");
+// const iconBoxes = document.querySelectorAll(".icon-box");
+const iconBoxes = [...document.querySelectorAll(".icon-box")];
+const iconBoxWidth = iconBoxes[0].offsetWidth;
+
+const firstBox = iconBoxes[0];
+const lastBox =iconBoxes[iconBoxes.length-1];
+
+let currentPosition = 0;
+
+curButton.forEach((arrowButton) => {
+    arrowButton.addEventListener("click", () => {
+        if(arrowButton.classList.contains("right-a")) {
+            currentPosition = currentPosition-iconBoxWidth;
+            if (currentPosition < ((iconBoxes.length - 6) * -iconBoxWidth)) {
+                currentPosition = 0;
+            }
+        } else {
+            currentPosition = currentPosition+iconBoxWidth;
+            if (currentPosition > 0) {
+                currentPosition = 0
+            }
+        }
+        slider.style.transform = `translateX(${currentPosition}px)`;
+    });
+});
+
+// curButton.forEach((arrowButton) => {
+//     arrowButton.addEventListener("click", () => {
+//         if(arrowButton.classList.contains("right-a")) {
+//             iconBoxes.push(firstBox);
+//             iconBoxes.slice(1)
+//         } 
+//     });
+// });

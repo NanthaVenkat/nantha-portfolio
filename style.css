@@ -204,7 +204,6 @@ body {
 }
 
 .initial.one {
-  /* transform: translateY(0px) translateX(2px); */
   z-index: 3;
   animation: wave-letter 3s ease-in-out infinite;
   font-size: 37px;
@@ -873,53 +872,118 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  position: relative;
 }
 
 .skill-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  padding-left: 30px;
-  padding-right: 30px;
-  row-gap: 30px;
   align-items: center;
-  justify-content: center;
+  transition: 0.3s;
 }
 
-.icon-box img {
+@media (min-width: 1200px) {
+  .cursor-wrap {
+    width: 1020px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+  .cursor-wrap {
+    width: 680px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+  .cursor-wrap {
+    width: 510px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cursor-wrap {
+    width: 340px;
+  }
+}
+ 
+.iconb_inner img {
   width: 70px;
   border-radius: 5px;
   transition: .3s;
   filter: brightness(0) invert(1);
 }
 
-.icon-box span {
+.iconb_inner span {
   font-size: 1.3rem;
   font-family: "poppins", sans-serif;
   font-weight: 600;
   color: #fff;
 }
 
-.icon-box {
+.iconb_inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* background-color: var(--primery-color); */
   border-radius: 5px;
   border: 2px solid #fff;
   margin: 0 10px;
   padding: 10px;
-  width: 150px;
+  min-width: 150px;
   height: 150px;
+  cursor: grab;
+}
+
+.iconb_inner:active {
+  cursor: grabbing;
 }
 
 .icon-box:hover img {
   scale: 1.1;
 }
 
-.icon-box:hover {
+.icon-box:hover .iconb_inner {
   box-shadow: 1px 1px 14px 1px #f1eded7d;
+}
+
+.cursor-wrap {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* .cur-but-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+} */
+
+.cur-but-wrap {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 999999;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.arrows {
+  border-radius: 50%;
+  background-color: var(--color2);
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 15px;
+  color: var(--font);
+  cursor: pointer;
+}
+
+.arrows:hover {
+  color: #333;
 }
 
 .lg-text {
