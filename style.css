@@ -410,7 +410,8 @@ body {
   border-radius: 250px 750px 250px 750px / 750px 250px 750px 250px;
   transition: transform 0.3s ease-in-out;
   animation: wobble 9s infinite;
-  box-shadow: 31px -16px 0px -10px #ffffff
+  box-shadow: 31px -16px 0px -10px #ffffff;
+  mix-blend-mode: luminosity;
 }
 
 .wobble-image {
