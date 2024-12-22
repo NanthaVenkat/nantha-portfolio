@@ -192,6 +192,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            border: 1px solid #fff;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffffff2e;
         }
 
         .icon-box img {
@@ -201,24 +205,35 @@
             object-fit: contain;
         }
 
+        .icon-box span {
+            margin-top: 10px;
+            display: inline-block;
+            font-size: 15px;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
         .carousel-buttons {
             display: flex;
             justify-content: space-between;
-            margin: 10px 0;
+            margin: 10px auto;
+            max-width: 250px;
         }
 
         .carousel-buttons button {
-            background-color: #007bff;
+            background-color: #ff7261;
             color: white;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
             font-size: 1rem;
+            width: 100px;
         }
 
         .carousel-buttons button:disabled {
-            background-color: #ccc;
+            opacity: 0.5;
             cursor: not-allowed;
         }
     </style>
@@ -317,15 +332,16 @@
             <div class="info_list">
                 <div class="add-info">
                     <div class="ad-img"><img src="Image/coin.png" alt="coin"></div>
-                    <h2>(Numismatics) intrested In coin Collecting</h2>
+                    <h2><b>Numismatics:</b> <br>Enthusiast in coin collecting, with a deep appreciation for historical and rare coins.</h2>
                 </div>
                 <div class="add-info">
                     <div class="ad-img"><img src="Image/color-palette.png" alt="paint"></div>
-                    <h2>Won a Distric Level Drawing Compatition</h2>
+                    <h2><b>Art & Design:</b> <br>Winner of a district-level drawing competition, demonstrating creativity and attention to detail.</h2>
                 </div>
                 <div class="add-info">
                     <div class="ad-img"><img src="Image/project-management.png" alt="project"></div>
-                    <h2>Intrested in technology and Computing</h2>
+                    <h2><b>Technology & Computing:</b> <br>Passionate about the latest technological advancements and computing innovations.
+                    </h2>
                 </div>
             </div>
         </div>
